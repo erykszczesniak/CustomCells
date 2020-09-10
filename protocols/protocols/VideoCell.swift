@@ -12,6 +12,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var videoImageView: UIImageView!
     @IBOutlet weak var videoTitle: UILabel!
     
+    
     var videoItem: Video!
     var delegate: VideoCellDelegate?
     
@@ -22,11 +23,11 @@ class VideoCell: UITableViewCell {
         videoTitle.text = video.title
     }
     
-    @IBAction func watchLaterTapped(_ sender: YtGhostButton) {
+    @IBAction func watchLaterTapped(_ sender: Any) {
         delegate?.didTapWatchLater(title: videoItem.title)
     }
     
-    @IBAction func watchNowTapped(_ sender: YTRoundedButton ) {
+    @IBAction func watchNowTapped(_ sender: Any ) {
         delegate?.didTapWatchNow(url: videoItem.url)
     }
 
